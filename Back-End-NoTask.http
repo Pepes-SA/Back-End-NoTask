@@ -1,0 +1,6 @@
+@Back_End_NoTask_HostAddress = http://localhost:5028
+
+GET {{Back_End_NoTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
