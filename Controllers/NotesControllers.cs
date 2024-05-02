@@ -18,7 +18,7 @@ namespace BackEndNoTask.Controllers
 
         //Listado de Notas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Note>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Note>>> GetNotes()
         {
           return await _context.Notes.ToListAsync();
         }
