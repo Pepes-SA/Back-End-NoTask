@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {}
+    "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {}
   },
   "projects": {
-    "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {
+    "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
+        "projectUniqueName": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
         "projectName": "Back-End-NoTask",
-        "projectPath": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
-        "packagesPath": "/home/riwip4-001/.nuget/packages/",
-        "outputPath": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/obj/",
+        "projectPath": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
+        "packagesPath": "/home/riwip5-027/.nuget/packages/",
+        "outputPath": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/riwip4-001/.nuget/NuGet/NuGet.Config"
+          "/home/riwip5-027/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

@@ -25,3 +25,7 @@ INSERT INTO `Notes` (`Title`, `Text`,`CreationDate`,`Status`) VALUES ('NOta2', '
 
 
 INSERT INTO `Notes`(`Title`,`Text`,`CreationDate`,`Status`) VALUES('NOta1','Lorem imsunlsajfkldjsjasldf','2024-05-01 16:01:01','Activo');
+
+INSERT INTO `NoteCategory`(`Name`,`CreationDate`,`Status`) VALUES('Importante','2023-05-10 20:00:00','Activo');
+
+INSERT INTO `NoteCategory`(`Name`,`CreationDate`,`Status`) VALUES('No Importante','2022-05-10 15:00:00','Desactivado');
