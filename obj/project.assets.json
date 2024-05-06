@@ -1164,34 +1164,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "/home/riwip4-001/.nuget/packages/": {}
-=======
-    "/home/codespace/.nuget/packages/": {}
->>>>>>> e5d2ccd26fd2da1d90b0dfb17e2e4f72605b2d7f
+    "/home/riwip4-038/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
+      "projectUniqueName": "/home/riwip4-038/Documents/jp4A/Back-End-NoTask/Back-End-NoTask.csproj",
       "projectName": "Back-End-NoTask",
-      "projectPath": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
-      "packagesPath": "/home/riwip4-001/.nuget/packages/",
-      "outputPath": "/home/riwip4-001/Documents/jp4A/NoTask/Back-End-NoTask/obj/",
+      "projectPath": "/home/riwip4-038/Documents/jp4A/Back-End-NoTask/Back-End-NoTask.csproj",
+      "packagesPath": "/home/riwip4-038/.nuget/packages/",
+      "outputPath": "/home/riwip4-038/Documents/jp4A/Back-End-NoTask/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/riwip4-001/.nuget/NuGet/NuGet.Config"
-=======
-      "projectUniqueName": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
-      "projectName": "Back-End-NoTask",
-      "projectPath": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/Back-End-NoTask/obj/",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
->>>>>>> e5d2ccd26fd2da1d90b0dfb17e2e4f72605b2d7f
+        "/home/riwip4-038/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1252,7 +1237,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/riwip4-038/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

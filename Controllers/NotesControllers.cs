@@ -158,5 +158,25 @@ namespace BackEndNoTask.Controllers
     {
       return _context.Notes.Any(e => e.Id == id);
     }
+
+    //Metodo para filtrar
+
+    [HttpGet]
+    [Route("SearchByDate/{date}")]
+    public async Task<ActionResult<List<Note>>> SearchNotesByDate(DateTime date)
+    {
+      Console.WriteLine("Fecha :----- "+date);
+        var notes = await _context.Notes
+            .Where(n => n.CreationDate == date)
+            .ToListAsync();
+
+        if (notes == null || !notes.Any())
+        {
+            return NotFound();
+        }
+
+        return notes;
+    }
+
   }
 }
