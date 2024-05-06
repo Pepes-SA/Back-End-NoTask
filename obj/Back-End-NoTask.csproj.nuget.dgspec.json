@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {}
+    "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj": {}
   },
   "projects": {
-    "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj": {
+    "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
+        "projectUniqueName": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
         "projectName": "Back-End-NoTask",
-        "projectPath": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/Back-End-NoTask.csproj",
-        "packagesPath": "/home/riwip5-027/.nuget/packages/",
-        "outputPath": "/home/riwip5-027/Documents/Juan Pablo 4A/NoTask/Back-End-NoTask/obj/",
+        "projectPath": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/Back-End-NoTask/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/riwip5-027/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -70,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
