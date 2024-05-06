@@ -1164,11 +1164,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Juan Pablo\\.nuget\\packages\\": {}
+=======
+    "/home/codespace/.nuget/packages/": {}
+>>>>>>> origin/Dev
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Juan Pablo\\Desktop\\Ejercicios MVC\\NoTasK\\Back-End-NoTask\\Back-End-NoTask.csproj",
       "projectName": "Back-End-NoTask",
       "projectPath": "C:\\Users\\Juan Pablo\\Desktop\\Ejercicios MVC\\NoTasK\\Back-End-NoTask\\Back-End-NoTask.csproj",
@@ -1178,6 +1183,16 @@
       "configFilePaths": [
         "C:\\Users\\Juan Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
+      "projectName": "Back-End-NoTask",
+      "projectPath": "/workspaces/Back-End-NoTask/Back-End-NoTask.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/Back-End-NoTask/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
+>>>>>>> origin/Dev
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1239,7 +1254,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+>>>>>>> origin/Dev
       }
     }
   }

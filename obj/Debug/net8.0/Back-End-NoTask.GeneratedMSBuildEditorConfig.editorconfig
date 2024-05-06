@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Back_End_NoTask
 build_property.RootNamespace = Back_End_NoTask
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Juan Pablo\Desktop\Ejercicios MVC\NoTasK\Back-End-NoTask\
+=======
+build_property.ProjectDir = /workspaces/Back-End-NoTask/
+>>>>>>> origin/Dev
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\Juan Pablo\Desktop\Ejercicios MVC\NoTasK\Back-End-NoTask
+=======
+build_property.MSBuildProjectDirectory = /workspaces/Back-End-NoTask
+>>>>>>> origin/Dev
 build_property._RazorSourceGeneratorDebug = 

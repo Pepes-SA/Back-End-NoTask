@@ -10,6 +10,7 @@ namespace BackEndNoTask.Data
     }
 
     public DbSet<Note> Notes { get; set; }
+    public DbSet<NoteCategory> NoteCategorys { get; set; }
   }
 
 }

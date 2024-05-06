@@ -2,33 +2,32 @@ using Microsoft.AspNetCore.Mvc;
 using BackEndNoTask.Data;
 using BackEndNoTask.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace BackEndNoTask.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class NotesController : Controller
+  public class NoteCategorysController : Controller
   {
     private readonly BaseContext _context;
 
-    public NotesController(BaseContext context)
+    public NoteCategorysController(BaseContext context)
     {
       _context = context;
     }
 
     //Listado de Notas
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Note>>> GetNotes()
+    public async Task<ActionResult<IEnumerable<NoteCategory>>> GetNoteCategorys()
     {
-      return await _context.Notes.ToListAsync();
+      return await _context.NoteCategorys.ToListAsync();
     }
 
     // Detalles 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Note>> GetNote(int id)
+    public async Task<ActionResult<NoteCategory>> GetNoteCategory(int id)
     {
-      var note = await _context.Notes.FindAsync(id);
+      var note = await _context.NoteCategorys.FindAsync(id);
 
       if (note == null)
       {
@@ -37,75 +36,52 @@ namespace BackEndNoTask.Controllers
       return note;
     }
 
-    [HttpGet("SearchByTitle/{title}")]
-    public async Task<ActionResult<List<Note>>> SearchNotes(string title)
-    {
-      var lowercaseTitle = title.ToLowerInvariant();
-      var notes = await _context.Notes.ToListAsync();
-      var matchingNotes = notes.Where(n => n.Title.ToLowerInvariant().StartsWith(lowercaseTitle)).ToList();
-      if (matchingNotes == null || !matchingNotes.Any())
-      {
-        return NotFound();
-      }
-      return matchingNotes;
-    }
-
-
-
     //Crear una nota
     [HttpPost]
-    public async Task<ActionResult<Note>> PostNote([Bind("Title,Text,IdNoteCategory")] Note data)
+    public async Task<ActionResult<NoteCategory>> PostNoteCategory([Bind("Name")] NoteCategory data)
     {
-      Note note = new Note
+      NoteCategory category = new NoteCategory()
       {
-        Title = data.Title,
-        Text = data.Text,
+        Name = data.Name,
         CreationDate = DateTime.Now,
-        Status = "Activo",
-        IdNoteCategory = data.IdNoteCategory
+        Status = "Activo"
       };
-
-      _context.Notes.Add(note);
+      _context.NoteCategorys.Add(category);
       await _context.SaveChangesAsync();
-
-      return CreatedAtAction("GetNote", new { id = note.Id }, note);
-
+      return CreatedAtAction("GetNoteCategory", new { id = category.Id }, category);
     }
-
 
     //Eliminar una nota
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteNote(int id)
+    public async Task<IActionResult> DeleteNoteCategory(int id)
     {
-      var note = await _context.Notes.FindAsync(id);
+      var note = await _context.NoteCategorys.FindAsync(id);
       if (note == null)
       {
         return NotFound();
       }
 
-      _context.Notes.Remove(note);
+      _context.NoteCategorys.Remove(note);
       await _context.SaveChangesAsync();
-
       return NoContent();
     }
 
     //Actualizar nota
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutNote(int id, Note updatedNote)
+    public async Task<IActionResult> PutNoteCategory(int id, NoteCategory updatedNote)
     {
       if (id != updatedNote.Id)
       {
         return BadRequest();
       }
 
-      var note = await _context.Notes.FindAsync(id);
+      var note = await _context.NoteCategorys.FindAsync(id);
       if (note == null)
       {
         return NotFound();
       }
-      note.Title = updatedNote.Title;
-      note.Text = updatedNote.Text;
+      note.Name = updatedNote.Name;
       note.CreationDate = updatedNote.CreationDate;
       note.Status = updatedNote.Status;
 
@@ -124,13 +100,13 @@ namespace BackEndNoTask.Controllers
           throw;
         }
       }
-      return CreatedAtAction("GetNote", new { id = note.Id }, note);
+      return NoContent();
     }
 
     [HttpPut("{id}/{status}")]
-    public async Task<IActionResult> ChangeStatusNote(int id, string status)
+    public async Task<IActionResult> ChangeStatusCategory(int id, string status)
     {
-      var note = await _context.Notes.FindAsync(id);
+      var note = await _context.NoteCategorys.FindAsync(id);
       if (note == null)
       {
         return NotFound();
@@ -154,9 +130,10 @@ namespace BackEndNoTask.Controllers
       }
       return NoContent();
     }
+
     private bool NoteExists(int id)
     {
-      return _context.Notes.Any(e => e.Id == id);
+      return _context.NoteCategorys.Any(e => e.Id == id);
     }
   }
 }
