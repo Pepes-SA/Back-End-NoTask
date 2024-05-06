@@ -11,7 +11,6 @@ namespace BackEndNoTask.Models
     public DateTime CreationDate { get; set; }
 
     public string? Status { get; set; }
-
-    public int IdNoteCategory { get; set; }
+    public int? IdNoteCategory { get; set; }
   }
 }

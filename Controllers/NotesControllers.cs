@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using BackEndNoTask.Data;
 using BackEndNoTask.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace BackEndNoTask.Controllers
 {
@@ -36,16 +37,41 @@ namespace BackEndNoTask.Controllers
       return note;
     }
 
+    [HttpGet("SearchByTitle/{title}")]
+    public async Task<ActionResult<List<Note>>> SearchNotes(string title)
+    {
+      var lowercaseTitle = title.ToLowerInvariant();
+      var notes = await _context.Notes.ToListAsync();
+      var matchingNotes = notes.Where(n => n.Title.ToLowerInvariant().StartsWith(lowercaseTitle)).ToList();
+      if (matchingNotes == null || !matchingNotes.Any())
+      {
+        return NotFound();
+      }
+      return matchingNotes;
+    }
+
+
+
     //Crear una nota
     [HttpPost]
-    public async Task<ActionResult<Note>> PostNote(Note note)
+    public async Task<ActionResult<Note>> PostNote([Bind("Title,Text,IdNoteCategory")] Note data)
     {
+      Note note = new Note
+      {
+        Title = data.Title,
+        Text = data.Text,
+        CreationDate = DateTime.Now,
+        Status = "Activo",
+        IdNoteCategory = data.IdNoteCategory
+      };
+
       _context.Notes.Add(note);
       await _context.SaveChangesAsync();
 
-      return CreatedAtAction("GetPerson", new { id = note.Id }, note);
+      return CreatedAtAction("GetNote", new { id = note.Id }, note);
 
     }
+
 
     //Eliminar una nota
 
@@ -98,9 +124,36 @@ namespace BackEndNoTask.Controllers
           throw;
         }
       }
-      return NoContent();
+      return CreatedAtAction("GetNote", new { id = note.Id }, note);
     }
 
+    [HttpPut("{id}/{status}")]
+    public async Task<IActionResult> ChangeStatusNote(int id, string status)
+    {
+      var note = await _context.Notes.FindAsync(id);
+      if (note == null)
+      {
+        return NotFound();
+      }
+      note.Status = status;
+
+      try
+      {
+        await _context.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!NoteExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
+      return NoContent();
+    }
     private bool NoteExists(int id)
     {
       return _context.Notes.Any(e => e.Id == id);
