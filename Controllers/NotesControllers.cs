@@ -111,6 +111,7 @@ namespace BackEndNoTask.Controllers
 
       try
       {
+        _context.Notes.Update(note);
         await _context.SaveChangesAsync();
       }
       catch (DbUpdateConcurrencyException)
@@ -127,18 +128,19 @@ namespace BackEndNoTask.Controllers
       return CreatedAtAction("GetNote", new { id = note.Id }, note);
     }
 
-    [HttpPut("{id}/{status}")]
-    public async Task<IActionResult> ChangeStatusNote(int id, string status)
+    [HttpPut("changeStatus/{id}/{status}")]
+    public async Task<IActionResult> ChangeStatusNote(int id, [FromRoute] string status)
     {
       var note = await _context.Notes.FindAsync(id);
       if (note == null)
       {
         return NotFound();
       }
-      note.Status = status;
+      //note.Status = status;
 
       try
       {
+        _context.Notes.Update(note);
         await _context.SaveChangesAsync();
       }
       catch (DbUpdateConcurrencyException)
@@ -152,11 +154,39 @@ namespace BackEndNoTask.Controllers
           throw;
         }
       }
-      return NoContent();
+      return CreatedAtAction("GetNote", new { id = note.Id }, note);
     }
     private bool NoteExists(int id)
     {
       return _context.Notes.Any(e => e.Id == id);
     }
+
+    [HttpGet("filter/{filter}")]
+    public async Task<ActionResult<IEnumerable<Note>>> GetFilteredNotes(string filter)
+    {
+      IQueryable<Note> notesQuery = _context.Notes;
+
+      switch (filter)
+      {
+        case "1":
+          notesQuery = notesQuery.Where(n => n.Status == "Archivado");
+          break;
+        case "2":
+          notesQuery = notesQuery.Where(n => n.Status == "Eliminado");
+          break;
+        case "3":
+          notesQuery = notesQuery.OrderBy(n => n.Status); ;
+          break;
+        case "4":
+          notesQuery = notesQuery.OrderBy(n => n.CreationDate);
+          break;
+        default:
+          return BadRequest("Filtro no válido");
+      }
+      var notes = await notesQuery.ToListAsync();
+      return notes;
+    }
+
+
   }
 }
